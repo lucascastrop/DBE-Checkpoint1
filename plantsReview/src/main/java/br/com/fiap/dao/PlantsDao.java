@@ -10,11 +10,11 @@ import br.com.fiap.utils.JPAUtil;
 
 public class PlantsDao {
 
-	public void save(Plants setup) {
+	public void save(Plants plants) {
 		EntityManager manager = JPAUtil.getEntityManager();
 		
 		manager.getTransaction().begin();
-		manager.persist(setup);
+		manager.persist(plants);
 		manager.getTransaction().commit();
 		
 		manager.close();
@@ -23,7 +23,7 @@ public class PlantsDao {
 
 	public List<Plants> getAll() {
 		EntityManager manager = JPAUtil.getEntityManager();
-		String jpql = "SELECT s FROM Setup s";
+		String jpql = "SELECT p FROM Plants p";
 		TypedQuery<Plants> query = manager.createQuery(jpql, Plants.class);
 		// TODO manager.close();
 

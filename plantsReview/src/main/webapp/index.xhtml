@@ -12,8 +12,8 @@
 	
 		<div class="card product">
 		    <h:form id="form">
-		        <p:dataView var="setup" 
-		        			value="#{setupBean.setups}" 
+		        <p:dataView var="plants" 
+		        			value="#{plantsBean.plantss}" 
 		        			rows="5" 
 		        			paginator="true"
 		                    rowsPerPageTemplate="5,10"
@@ -21,44 +21,17 @@
 		                    gridIcon="pi pi-th-large" 
 		                    listIcon="pi pi-bars">
 		
-		            <p:dataViewGridItem>
-		                <div class="product-grid-item card border-1">
-		                    <div class="product-grid-item-top">
-		                        <div>
-		                            <i class="pi pi-tag product-category-icon"/>
-		                            <span class="product-category">#{product.category}</span>
-		                        </div>
-		                        <span class="product-badge status-#{product.inventoryStatus.name().toLowerCase()}">#{product.inventoryStatus.text}</span>
-		                    </div>
-		                    <div class="product-grid-item-content">
-		                        <p:graphicImage name="images/product/#{product.image}" library="demo"/>
-		                        <div class="product-name">#{product.name}</div>
-		                        <div class="product-description">#{product.description}</div>
-		                        <p:rating readonly="true" value="#{product.rating}"/>
-		                    </div>
-		                    <div class="product-grid-item-bottom">
-		                        <h:outputText value="#{product.price}" styleClass="product-price">
-		                            <f:convertNumber currencySymbol="$" type="currency"/>
-		                        </h:outputText>
-		                        <p:commandButton type="button"
-		                                            value="Add To Cart"
-		                                            icon="pi pi-shopping-cart"
-		                                            disabled="#{product.inventoryStatus == 'OUTOFSTOCK'}">
-		                        </p:commandButton>
-		                    </div>
-		                </div>
-		            </p:dataViewGridItem>
 		
 		            <p:dataViewListItem>
-		                <div class="setup-list-item">
+		                <div class="plants-list-item">
 		                    <p:graphicImage name="demo/images/product/"/>
-		                    <div class="setup-list-detail">
-		                        <div class="setup-name">#{setup.name}</div>
-		                        <div class="setup-description">#{setup.description}</div>
+		                    <div class="plants-list-detail">
+		                        <div class="plants-name">#{plants.name}</div>
+		                        <div class="plants-description">#{plants.description}</div>
 		                        <p:rating value="0"/>
 		                    </div>
-		                    <div class="setup-list-action">
-		                        <h:outputText value="#{setup.price}" styleClass="setup-price">
+		                    <div class="plants-list-action">
+		                        <h:outputText value="#{plants.price}" styleClass="plants-price">
 		                            <f:convertNumber currencySymbol="R$" type="currency"/>
 		                        </h:outputText>
 		                        <p:commandButton type="button" value="Detail" icon="pi pi-search" />

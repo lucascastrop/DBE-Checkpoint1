@@ -45,7 +45,7 @@ public class Plants {
 
 	@Override
 	public String toString() {
-		return "Setup [name=" + name + ", description=" + description + ", price=" + price + "]";
+		return "Plants [name=" + name + ", description=" + description + ", price=" + price + "]";
 	}
 	
 	
